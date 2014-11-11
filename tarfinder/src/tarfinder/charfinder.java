@@ -2,28 +2,6 @@ package tarfinder;
 
 public class charfinder {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		charfinder cf = new charfinder();
-		
-		String s = "Praktikum"; //man fängt immer ab Null an zu zählen also P ist "0"
-		
-		//char t = s.charAt(0); 
-		//System.out.println(t + s.length());
-		
-		//Character l = s.charAt(s.length() - 1);
-		//System.out.println(l);
-		
-		System.out.println("the first character of" + s + "is" + cf.getFristChar(s));
-		System.out.println("the lasr character of" + s + "is" + cf.getLastChar(s));
-		System.out.println(s + "length is" + s.length());
-		
-		cf.printAllCharPositions(s);
-		
-		cf.getCharPos(s, 'k');
-
-	}
 	
 	Character getFristChar(String s) {
 		
@@ -77,7 +55,55 @@ public class charfinder {
 			
 			System.out.println(tofind + "was not found");
 			
-		}
+		}}
+		
+		void countCharOccALaForLoop(String s, Character toFind){                             //von hier an neu (11.11.14)
+			
+			s = s.toLowerCase();
+			
+			Integer stringLength = s.length();
+			Integer charOcc= 0;
+			
+			for(Integer i=0; i<stringLength; i++) {
+				
+				if (s.charAt(i) !=toFind) {
+				continue;
+				} else {
+					charOcc++;
+				}
+				
+				if (charOcc == 0) {
+				System.out.println(" " + toFind + " was not found in " + s);	
+				} else {
+					
+					if (charOcc ==1) {
+					
+						System.out.println("there is " + charOcc + " occurence of " + toFind + " in " + s);
+					} else {
+						System.out.println("there are " + charOcc + " occurences of " + toFind + " in " + s);
+					}
+				}
+				}
+				
+			}
+		
+       void countCharOccALaWhileLoop(String s, Character toFind){                             //von hier an neu (11.11.14)
+			
+			s = s.toLowerCase();
+			
+			Integer currentPosition = 0;
+			Integer charOcc= 0;
+			
+			while(currentPosition < s.length()) {
+				if (s.charAt(currentPosition) != toFind){
+				continue;
+			} else { 
+				charOcc++;
+			}
+			}
+			}
+			
+	
 		
 		
 		
@@ -86,4 +112,4 @@ public class charfinder {
 		
 	
 
-}
+
